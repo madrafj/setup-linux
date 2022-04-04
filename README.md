@@ -28,17 +28,20 @@ sudo apt-get install -y php7.4-cli php7.4-json php7.4-common php7.4-mysql php7.4
 
 ## 2. install Composer
 ```
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
+sudo apt install curl
 ```
 ```
-php composer.phar --version
+cd ~
+curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php```
 ```
 ```
-sudo mv composer.phar /usr/local/bin/composer
+HASH=`curl -sS https://composer.github.io/installer.sig`
 ```
 ```
-composer --version
+php -r "if (hash_file('SHA384', '/tmp/composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+```
+sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
+```
+```
+composer
 ```
