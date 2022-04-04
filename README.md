@@ -45,3 +45,23 @@ sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=compose
 ```
 composer
 ```
+
+## 3. install NodeJS
+source: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04-id
+
+```
+cd ~
+curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+```
+```
+sudo bash nodesource_setup.sh
+```
+```
+sudo apt install nodejs
+```
+```
+node -v
+```
+
+## 4. install Code
+
