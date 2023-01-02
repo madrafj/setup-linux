@@ -65,3 +65,31 @@ node -v
 
 ## 4. install Code
 
+
+
+
+
+===================================================================
+## BackEnd GRPC
+https://grpc.io/docs/languages/go/quickstart/
+### GoLang
+```
+wget -c https://golang.org/dl/go1.16.3.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+```
+https://www.letscloud.io/community/how-to-install-golang-on-ubuntu-2004
+https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-20-04
+### Protoc
+```
+sudo apt install -y protobuf-compiler
+```
+proto plugins
+```
+go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
+```
+```
+sudo nano ~/.profile
+```
+```
+export PATH="$PATH:$(go env GOPATH)/bin"
+```
