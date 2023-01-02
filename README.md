@@ -40,6 +40,7 @@ HASH=`curl -sS https://composer.github.io/installer.sig`
 ```
 php -r "if (hash_file('SHA384', '/tmp/composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 ```
+```
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 ```
 ```
@@ -93,3 +94,20 @@ sudo nano ~/.profile
 ```
 export PATH="$PATH:$(go env GOPATH)/bin"
 ```
+
+
+
+## Redis
+```
+curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+
+sudo apt-get update
+sudo apt-get install redis
+```
+https://redis.io/docs/getting-started/installation/install-redis-on-linux/
+
+
+
+
